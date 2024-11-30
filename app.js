@@ -3,7 +3,7 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 const authRoutes = require('./routes/authRoutes');
 const auctionRoutes = require('./routes/auctionRoutes');
-
+require('dotenv').config()
 const app = express();
 
 // Middleware
@@ -11,7 +11,7 @@ app.use(bodyParser.json());
 // app.use(cors());
 
 app.use(cors({
-    origin: 'http://localhost:5000', // Frontend URL
+    origin: process.env.FRONTEND_SOCKET_URL, // Frontend URL
     methods: ['GET', 'POST'],
     allowedHeaders: ['Content-Type', 'Authorization']
   }));
