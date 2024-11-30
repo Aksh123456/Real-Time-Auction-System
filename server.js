@@ -3,8 +3,9 @@ const app = require('./app');
 const connectDB = require('./config/db');
 const socketConfig = require('./config/socket');
 const socketManager = require('./socketManager');
+require('dotenv').config();
 
-const PORT = 3000;
+const PORT = process.env.PORT;
 
 // Database connection
 connectDB();

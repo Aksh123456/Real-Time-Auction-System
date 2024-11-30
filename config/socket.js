@@ -1,9 +1,10 @@
 const { Server } = require("socket.io");
+require('dotenv').config();
 
 module.exports = (server) => {
   const io = new Server(server, {
     cors: {
-      origin: "http://localhost:5000",
+      origin: process.env.FRONTEND_SOCKET_URL,
       methods: ["GET", "POST"],
     },
   });
