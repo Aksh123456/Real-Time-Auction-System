@@ -17,6 +17,9 @@ app.use(cors({
   }));
 
 // Routes
+app.get('/', ()=> {
+  console.log('Namaste India');
+})
 app.use('/auth', authRoutes);
 app.use('/auction', auctionRoutes);
 
